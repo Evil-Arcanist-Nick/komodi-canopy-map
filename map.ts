@@ -66,7 +66,7 @@ const locations: MapLocation[] = [
   { id: 'location-58', coordinates: [568.5,794], title: 'Settlement #3375', description: '' },
   { id: 'location-59', coordinates: [606,780], title: 'Settlement #4570', description: '' },
   { id: 'location-60', coordinates: [612.5,765.5], title: 'Homestead #10488', description: '' },
-  { id: 'location-61', coordinates: [597.5,757], title: 'Homestead #7857', description: '' },
+  { id: 'location-61', coordinates: [597.5,757], title: 'Homestead #7857', description: 'Owner: Evil Arcanist Nick of El Dorado' },
   { id: 'location-62', coordinates: [616,750], title: 'Settlement #4672', description: 'Owner: @Wikilander' },
   { id: 'location-63', coordinates: [615.5,727], title: 'Homestead #9820', description: '' },
   { id: 'location-64', coordinates: [595.5,738.5], title: 'Homestead #8139', description: '' },
@@ -74,25 +74,25 @@ const locations: MapLocation[] = [
   { id: 'location-66', coordinates: [571.5,727], title: 'Homestead #7790', description: '' },
   { id: 'location-67', coordinates: [573,710.5], title: 'Settlement #3797', description: '' },
   { id: 'location-68', coordinates: [546,730], title: 'Settlement #4273', description: '' },
-  { id: 'location-69', coordinates: [567.5,754.5], title: 'Village #151', description: '' },
+  { id: 'location-69', coordinates: [567.5,754.5], title: 'Village #151', description: 'Owner: Evil Arcanist Nick of El Dorado' },
   { id: 'location-70', coordinates: [284,767.5], title: 'Settlement #3466', description: '' },
   { id: 'location-71', coordinates: [289,744], title: 'Homestead #8194', description: '' },
   { id: 'location-72', coordinates: [264,736.5], title: 'Homestead #8802', description: '' },
   { id: 'location-73', coordinates: [267.5,771.5], title: 'Homestead #7531', description: '' },
   { id: 'location-74', coordinates: [87.5,814], title: 'Homestead #10327', description: '' },
-  { id: 'location-75', coordinates: [71,808.5], title: 'Homestead #8732', description: '' },
+  { id: 'location-75', coordinates: [71,808.5], title: 'Homestead #8732', description: 'Owner: Evil Arcanist Nick of El Dorado' },
   { id: 'location-76', coordinates: [69.5,790], title: 'Settlement #3439', description: '' },
   { id: 'location-77', coordinates: [45.5,805], title: 'Settlement #3941', description: '' },
   { id: 'location-78', coordinates: [50,824], title: 'Homestead #9720', description: '' },
   { id: 'location-79', coordinates: [50,841], title: 'Homestead #8515', description: '' },
-  { id: 'location-80', coordinates: [30.5,840], title: 'Settlement #4406', description: '' },
-  { id: 'location-81', coordinates: [42,867], title: 'Settlement #3332', description: '' },
+  { id: 'location-80', coordinates: [30.5,840], title: 'Settlement #4406', description: 'Owner: Evil Arcanist Nick of El Dorado' },
+  { id: 'location-81', coordinates: [42,867], title: 'Settlement #3332', description: 'Owner: Evil Arcanist Nick of El Dorado' },
   { id: 'location-82', coordinates: [61.5,859.5], title: 'Homestead #8219', description: '' },
   { id: 'location-83', coordinates: [395,444.5], title: 'Settlement #3863', description: '' },
-  { id: 'location-84', coordinates: [401.5,428.5], title: 'Homestead #8393', description: '' },
-  { id: 'location-85', coordinates: [419,423.5], title: 'Settlement #4610', description: 'Owner: @Mayky' },
+  { id: 'location-84', coordinates: [401.5,428.5], title: 'Homestead #8393', description: 'Owner: Evil Arcanist Nick of El Dorado' },
+  { id: 'location-85', coordinates: [419,423.5], title: 'Settlement #4610', description: 'Owner: Evil Arcanist Nick of El Dorado' },
   { id: 'location-86', coordinates: [443.5,404.5], title: 'Settlement #4304 ', description: 'Owner: @IrvinG' },
-  { id: 'location-87', coordinates: [424,403.5], title: 'Homestead #10231', description: '' },
+  { id: 'location-87', coordinates: [424,403.5], title: 'Homestead #10231', description: 'Owner: Evil Arcanist Nick of El Dorado' },
   { id: 'location-88', coordinates: [426.5,390], title: 'Settlement #3683', description: 'Owner: @villanegreto LISTED' },
   { id: 'location-89', coordinates: [420,372], title: 'Homestead #10002', description: '' },
   { id: 'location-90', coordinates: [411.5,387], title: 'Homestead #9311', description: '' },
@@ -145,7 +145,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Create markers with tooltips for each location
     locations.forEach(location => {
         const marker = L.marker(L.latLng(location.coordinates[0], location.coordinates[1]), {
-            icon: createCustomIcon()
+            icon: createCustomIcon(location.description)
         }).addTo(map);
 
         // Create custom tooltip
@@ -173,9 +173,9 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Custom marker icon function
-    function createCustomIcon() {
+    function createCustomIcon(description: string) {
         return L.icon({
-            iconUrl: 'komodi-head.png',
+            iconUrl: description === '' ? 'qm.png' : 'komodi-head.png',
             iconSize: [60, 60], // Increased size for the icon
             iconAnchor: [30, 30], // Center point of the icon (half of size)
             tooltipAnchor: [0, 0], // Remove any tooltip offset
