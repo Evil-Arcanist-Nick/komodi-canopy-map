@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Komodi Canopy</title>
+    
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    
+    <!-- Custom Font -->
+    <style>
+        @font-face {
+            font-family: 'Lizzard';
+            src: url('Lizzard-nAx4.ttf') format('truetype');
+        }
+    </style>
+    
+    <!-- Custom CSS -->
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            font-family: Arial, sans-serif;
+            background-color: #4B7355; /* Match the primary green from the lizard head */
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            color: white;
+            margin: 0;
+            padding: 20px 0;
+            font-family: 'Lizzard', sans-serif;
+            font-size: 48px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        h4 {
+            color: white;
+            margin: 0;
+            padding: 20px 0;
+            font-family: 'Lizzard', sans-serif;
+            font-size: 24px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .map-container {
+            width: 100%;
+            height: 600px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            overflow: hidden;
+            margin-bottom: 30px;
+        }
+
+        #map {
+            height: 100%;
+            width: 100%;
+        }
+
+        .description {
+            margin-bottom: 30px;
+            line-height: 1.6;
+            color: rgba(255, 255, 255, 0.9);
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        .update-disclaimer {
+            margin-bottom: 30px;
+            line-height: 1.6;
+            color: rgba(255, 255, 255, 0.9);
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            font-weight: bold;
+        }
+
+
+        .custom-tooltip {
+            background-color: rgba(255, 255, 255, 0.9);
+            border: 1px solid #ccc;
+            padding: 10px;
+            border-radius: 5px;
+            font-family: Arial, sans-serif;
+            max-width: 300px;
+        }
+
+        .custom-tooltip h3 {
+            margin-top: 0;
+            color: #336699;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Komodi Canopy</h1>
+            <h4>"Komodissss isss Masssster Racccce'</h4>
+        </header>
+
+        <div class="description">
+            Explore the home ownership of komodi canopy in more detail.  Hover over the marker to see information about that plot.
+            
+        </div>
+
+        <div class="update-disclaimer">
+            **Will update based on owner contribution and community feedback.**
+        </div>
+
+        <div class="map-container">
+            <div id="map"></div>
+        </div>
+
+        <div class="description">
+            
+        </div>
+    </div>
+    
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    
+    <!-- Custom JS (compiled from TypeScript) -->
+    <script src="map.js"></script>
+</body>
+</html>

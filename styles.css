@@ -1,0 +1,25 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+}
+
+#map {
+    height: 100%;
+    width: 100%;
+}
+
+.custom-tooltip {
+    background-color: rgba(255, 255, 255, 0.9);
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+    font-family: Arial, sans-serif;
+    max-width: 300px;
+}
+
+.custom-tooltip h3 {
+    margin-top: 0;
+    color: #336699;
+}
