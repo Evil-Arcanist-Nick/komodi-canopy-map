@@ -1,5 +1,6 @@
+"use strict";
 // Define the locations data
-var locations = [
+const locations = [
     { id: 'location-2', coordinates: [711.5, 1435], title: 'Homestead #7535', description: '' },
     { id: 'location-3', coordinates: [681.5, 1451.5], title: 'Homestead #7460', description: '' },
     { id: 'location-4', coordinates: [664, 1444], title: 'Homestead #8916 (Corrupted!)', description: '' },
@@ -19,7 +20,7 @@ var locations = [
     { id: 'location-18', coordinates: [797, 928.5], title: 'Settlement #3305', description: '' },
     { id: 'location-19', coordinates: [778.5, 945], title: 'Homestead #9058', description: '' },
     { id: 'location-20', coordinates: [770, 928.5], title: 'Homestead #9621', description: '' },
-    { id: 'location-21', coordinates: [770.5, 913], title: 'Settlement #3469', description: '' },
+    { id: 'location-21', coordinates: [770.5, 913], title: 'Settlement #3469', description: 'Owner: Evil Arcanist Nick of El Dorado' },
     { id: 'location-22', coordinates: [778, 896.5], title: 'Homestead #10849', description: '' },
     { id: 'location-23', coordinates: [797.5, 887.5], title: 'Homestead #7856', description: '' },
     { id: 'location-24', coordinates: [820.5, 896], title: 'Homestead #10099', description: '' },
@@ -42,7 +43,7 @@ var locations = [
     { id: 'location-41', coordinates: [471, 1055], title: 'Homestead #7843', description: '' },
     { id: 'location-42', coordinates: [461.5, 1038], title: 'Homestead #10090', description: '' },
     { id: 'location-43', coordinates: [445, 1031.5], title: 'Homestead #10812', description: '' },
-    { id: 'location-44', coordinates: [446, 1053], title: 'Settlement #3655', description: '' },
+    { id: 'location-44', coordinates: [446, 1053], title: 'Settlement #3655', description: 'Owner: Evil Arcanist Nick of El Dorado' },
     { id: 'location-45', coordinates: [434, 1066.5], title: 'Homestead #10372', description: '' },
     { id: 'location-46', coordinates: [428, 1081.5], title: 'Settlement #3818', description: '' },
     { id: 'location-47', coordinates: [446.5, 1086.5], title: 'Homestead #8372', description: '' },
@@ -59,34 +60,34 @@ var locations = [
     { id: 'location-58', coordinates: [568.5, 794], title: 'Settlement #3375', description: '' },
     { id: 'location-59', coordinates: [606, 780], title: 'Settlement #4570', description: '' },
     { id: 'location-60', coordinates: [612.5, 765.5], title: 'Homestead #10488', description: '' },
-    { id: 'location-61', coordinates: [597.5, 757], title: 'Homestead #7857', description: '' },
-    { id: 'location-62', coordinates: [616, 750], title: 'Settlement #4672', description: '' },
+    { id: 'location-61', coordinates: [597.5, 757], title: 'Homestead #7857', description: 'Owner: Evil Arcanist Nick of El Dorado' },
+    { id: 'location-62', coordinates: [616, 750], title: 'Settlement #4672', description: 'Owner: @Wikilander' },
     { id: 'location-63', coordinates: [615.5, 727], title: 'Homestead #9820', description: '' },
     { id: 'location-64', coordinates: [595.5, 738.5], title: 'Homestead #8139', description: '' },
     { id: 'location-65', coordinates: [593.5, 726.5], title: 'Settlement #3356', description: '' },
     { id: 'location-66', coordinates: [571.5, 727], title: 'Homestead #7790', description: '' },
     { id: 'location-67', coordinates: [573, 710.5], title: 'Settlement #3797', description: '' },
     { id: 'location-68', coordinates: [546, 730], title: 'Settlement #4273', description: '' },
-    { id: 'location-69', coordinates: [567.5, 754.5], title: 'Village #151', description: '' },
+    { id: 'location-69', coordinates: [567.5, 754.5], title: 'Village #151', description: 'Owner: Evil Arcanist Nick of El Dorado' },
     { id: 'location-70', coordinates: [284, 767.5], title: 'Settlement #3466', description: '' },
     { id: 'location-71', coordinates: [289, 744], title: 'Homestead #8194', description: '' },
     { id: 'location-72', coordinates: [264, 736.5], title: 'Homestead #8802', description: '' },
     { id: 'location-73', coordinates: [267.5, 771.5], title: 'Homestead #7531', description: '' },
     { id: 'location-74', coordinates: [87.5, 814], title: 'Homestead #10327', description: '' },
-    { id: 'location-75', coordinates: [71, 808.5], title: 'Homestead #8732', description: '' },
+    { id: 'location-75', coordinates: [71, 808.5], title: 'Homestead #8732', description: 'Owner: Evil Arcanist Nick of El Dorado' },
     { id: 'location-76', coordinates: [69.5, 790], title: 'Settlement #3439', description: '' },
     { id: 'location-77', coordinates: [45.5, 805], title: 'Settlement #3941', description: '' },
     { id: 'location-78', coordinates: [50, 824], title: 'Homestead #9720', description: '' },
     { id: 'location-79', coordinates: [50, 841], title: 'Homestead #8515', description: '' },
-    { id: 'location-80', coordinates: [30.5, 840], title: 'Settlement #4406', description: '' },
-    { id: 'location-81', coordinates: [42, 867], title: 'Settlement #3332', description: '' },
+    { id: 'location-80', coordinates: [30.5, 840], title: 'Settlement #4406', description: 'Owner: Evil Arcanist Nick of El Dorado' },
+    { id: 'location-81', coordinates: [42, 867], title: 'Settlement #3332', description: 'Owner: Evil Arcanist Nick of El Dorado' },
     { id: 'location-82', coordinates: [61.5, 859.5], title: 'Homestead #8219', description: '' },
     { id: 'location-83', coordinates: [395, 444.5], title: 'Settlement #3863', description: '' },
-    { id: 'location-84', coordinates: [401.5, 428.5], title: 'Homestead #8393', description: '' },
-    { id: 'location-85', coordinates: [419, 423.5], title: 'Settlement #4610', description: '' },
-    { id: 'location-86', coordinates: [443.5, 404.5], title: 'Settlement #4304 ', description: '' },
-    { id: 'location-87', coordinates: [424, 403.5], title: 'Homestead #10231', description: '' },
-    { id: 'location-88', coordinates: [426.5, 390], title: 'Settlement #3683', description: '' },
+    { id: 'location-84', coordinates: [401.5, 428.5], title: 'Homestead #8393', description: 'Owner: Evil Arcanist Nick of El Dorado' },
+    { id: 'location-85', coordinates: [419, 423.5], title: 'Settlement #4610', description: 'Owner: Evil Arcanist Nick of El Dorado' },
+    { id: 'location-86', coordinates: [443.5, 404.5], title: 'Settlement #4304 ', description: 'Owner: @IrvinG' },
+    { id: 'location-87', coordinates: [424, 403.5], title: 'Homestead #10231', description: 'Owner: Evil Arcanist Nick of El Dorado' },
+    { id: 'location-88', coordinates: [426.5, 390], title: 'Settlement #3683', description: 'Owner: @villanegreto LISTED' },
     { id: 'location-89', coordinates: [420, 372], title: 'Homestead #10002', description: '' },
     { id: 'location-90', coordinates: [411.5, 387], title: 'Homestead #9311', description: '' },
     { id: 'location-91', coordinates: [401, 367], title: 'Settlement #3927', description: '' },
@@ -101,14 +102,14 @@ var locations = [
     { id: 'location-100', coordinates: [379, 57], title: 'Settlement #3493', description: '' }
 ];
 // Map initialization
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', () => {
     // Check if Leaflet is available
     if (typeof L === 'undefined') {
         console.error('Leaflet library not loaded!');
         return;
     }
     // Create the map
-    var map = L.map('map', {
+    const map = L.map('map', {
         crs: L.CRS.Simple,
         minZoom: 0, // Prevent zooming out beyond the image
         maxZoom: 1,
@@ -121,21 +122,26 @@ document.addEventListener('DOMContentLoaded', function () {
         maxBoundsViscosity: 1.0
     });
     // Define bounds for the image overlay
-    var bounds = [
+    const bounds = [
         [0, 0],
         [1000, 1500]
     ];
     // Add the image overlay
-    var image = L.imageOverlay('komodi-canopy-map.jpg', bounds).addTo(map);
+    const image = L.imageOverlay('komodi-canopy-map.jpg', bounds).addTo(map);
     // Fit the map to the bounds
     map.fitBounds(bounds);
     // Create markers with tooltips for each location
-    locations.forEach(function (location) {
-        var marker = L.marker(L.latLng(location.coordinates[0], location.coordinates[1]), {
-            icon: createCustomIcon()
+    locations.forEach(location => {
+        const marker = L.marker(L.latLng(location.coordinates[0], location.coordinates[1]), {
+            icon: createCustomIcon(location.description)
         }).addTo(map);
         // Create custom tooltip
-        var tooltipContent = "\n            <div class=\"custom-tooltip\">\n                <h3>".concat(location.title, "</h3>\n                <p>").concat(location.description, "</p>\n            </div>\n        ");
+        const tooltipContent = `
+            <div class="custom-tooltip">
+                <h3>${location.title}</h3>
+                <p>${location.description}</p>
+            </div>
+        `;
         // Add tooltip to marker
         marker.bindTooltip(tooltipContent, {
             direction: 'top',
@@ -146,16 +152,17 @@ document.addEventListener('DOMContentLoaded', function () {
             className: 'custom-tooltip-wrapper'
         });
         // Add click handler to show/hide tooltip
-        marker.on('click', function () {
+        marker.on('click', () => {
             marker.openTooltip();
         });
     });
     // Custom marker icon function
-    function createCustomIcon() {
+    function createCustomIcon(description) {
+        const isQuestionMark = description === '';
         return L.icon({
-            iconUrl: 'komodi-head.png',
-            iconSize: [60, 60], // Increased size for the icon
-            iconAnchor: [30, 30], // Center point of the icon (half of size)
+            iconUrl: isQuestionMark ? 'qm.png' : 'komodi-head.png',
+            iconSize: isQuestionMark ? [20, 20] : [60, 60], // Smaller size for question mark
+            iconAnchor: isQuestionMark ? [10, 10] : [30, 30], // Center point of the icon (half of size)
             tooltipAnchor: [0, 0], // Remove any tooltip offset
         });
     }
@@ -165,3 +172,4 @@ document.addEventListener('DOMContentLoaded', function () {
     map.zoomControl.setPosition('topright');
     console.log('Map initialization complete');
 });
+//# sourceMappingURL=map.js.map

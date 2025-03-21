@@ -26,7 +26,7 @@ const locations: MapLocation[] = [
   { id: 'location-18', coordinates: [797,928.5], title: 'Settlement #3305', description: '' },
   { id: 'location-19', coordinates: [778.5,945], title: 'Homestead #9058', description: '' },
   { id: 'location-20', coordinates: [770,928.5], title: 'Homestead #9621', description: '' },
-  { id: 'location-21', coordinates: [770.5,913], title: 'Settlement #3469', description: '' },
+  { id: 'location-21', coordinates: [770.5,913], title: 'Settlement #3469', description: 'Owner: Evil Arcanist Nick of El Dorado' },
   { id: 'location-22', coordinates: [778,896.5], title: 'Homestead #10849', description: '' },
   { id: 'location-23', coordinates: [797.5,887.5], title: 'Homestead #7856', description: '' },
   { id: 'location-24', coordinates: [820.5,896], title: 'Homestead #10099', description: '' },
@@ -49,7 +49,7 @@ const locations: MapLocation[] = [
   { id: 'location-41', coordinates: [471,1055], title: 'Homestead #7843', description: '' },
   { id: 'location-42', coordinates: [461.5,1038], title: 'Homestead #10090', description: '' },
   { id: 'location-43', coordinates: [445,1031.5], title: 'Homestead #10812', description: '' },
-  { id: 'location-44', coordinates: [446,1053], title: 'Settlement #3655', description: '' },
+  { id: 'location-44', coordinates: [446,1053], title: 'Settlement #3655', description: 'Owner: Evil Arcanist Nick of El Dorado' },
   { id: 'location-45', coordinates: [434,1066.5], title: 'Homestead #10372', description: '' },
   { id: 'location-46', coordinates: [428,1081.5], title: 'Settlement #3818', description: '' },
   { id: 'location-47', coordinates: [446.5,1086.5], title: 'Homestead #8372', description: '' },
@@ -174,10 +174,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Custom marker icon function
     function createCustomIcon(description: string) {
+        const isQuestionMark = description === '';
         return L.icon({
-            iconUrl: description === '' ? 'qm.png' : 'komodi-head.png',
-            iconSize: [60, 60], // Increased size for the icon
-            iconAnchor: [30, 30], // Center point of the icon (half of size)
+            iconUrl: isQuestionMark ? 'qm.png' : 'komodi-head.png',
+            iconSize: isQuestionMark ? [20, 20] : [60, 60], // Smaller size for question mark
+            iconAnchor: isQuestionMark ? [10, 10] : [30, 30], // Center point of the icon (half of size)
             tooltipAnchor: [0, 0], // Remove any tooltip offset
         });
     }
