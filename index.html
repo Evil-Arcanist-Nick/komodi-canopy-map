@@ -100,6 +100,35 @@
             margin-top: 0;
             color: #336699;
         }
+
+        .map-legend {
+            background-color: rgba(255, 255, 255, 0.9);
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .map-legend h3 {
+            color: #336699;
+            margin-top: 0;
+            margin-bottom: 15px;
+            font-family: 'Lizzard', sans-serif;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 10px 0;
+            gap: 10px;
+        }
+
+        .legend-item span {
+            color: #333;
+            font-size: 16px;
+        }
     </style>
 </head>
 <body>
@@ -110,16 +139,34 @@
         </header>
 
         <div class="description">
-            Explore the home ownership of komodi canopy in more detail.  Hover over the marker to see information about that plot.
+            Explore the Land Ownership and plot details of komodi canopy in more detail.  Hover over the marker to see information about that plot.
             
+        </div>
+
+
+
+        <div class="map-container">
+            <div id="map"></div>
         </div>
 
         <div class="update-disclaimer">
             **Will update based on owner contribution and community feedback.**
         </div>
 
-        <div class="map-container">
-            <div id="map"></div>
+        <div class="map-legend">
+            <h3>Map Legend</h3>
+            <div class="legend-item">
+                <img src="komodi-head.png" alt="Owned" width="30" height="30">
+                <span>Owned</span>
+            </div>
+            <div class="legend-item">
+                <img src="for-sale.png" alt="Listed" width="21" height="21">
+                <span>Listed</span>
+            </div>
+            <div class="legend-item">
+                <img src="qm.png" alt="No Info" width="20" height="20">
+                <span>No Information</span>
+            </div>
         </div>
 
         <div class="description">

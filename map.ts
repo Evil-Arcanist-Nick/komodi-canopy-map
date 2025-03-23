@@ -21,7 +21,7 @@ const locations: MapLocation[] = [
   { id: 'location-13', coordinates: [680,1172], title: 'Settlement #3774', description: '' },
   { id: 'location-14', coordinates: [676.5,1190.5], title: 'Settlement #3722', description: '' },
   { id: 'location-15', coordinates: [681.5,1219.5], title: 'Settlement #4491', description: '' },
-  { id: 'location-16', coordinates: [822.5,922], title: 'Homestead #10864', description: '' },
+  { id: 'location-16', coordinates: [822.5,922], title: 'Homestead #10864', description: 'LISTED' },
   { id: 'location-17', coordinates: [807,940.5], title: 'Homestead #9347', description: '' },
   { id: 'location-18', coordinates: [797,928.5], title: 'Settlement #3305', description: '' },
   { id: 'location-19', coordinates: [778.5,945], title: 'Homestead #9058', description: '' },
@@ -33,7 +33,7 @@ const locations: MapLocation[] = [
   { id: 'location-25', coordinates: [972,737], title: 'Homestead #9672', description: '' },
   { id: 'location-26', coordinates: [968,725], title: 'Homestead #8603', description: '' },
   { id: 'location-27', coordinates: [962.5,713.5], title: 'Homestead #8987 (Corrupted!)', description: '' },
-  { id: 'location-28', coordinates: [907,636.5], title: 'Homestead #10421', description: '' },
+  { id: 'location-28', coordinates: [907,636.5], title: 'Homestead #10421', description: 'LISTED' },
   { id: 'location-29', coordinates: [907,622], title: 'Homestead #7511', description: '' },
   { id: 'location-30', coordinates: [906.5,606.5], title: 'Homestead #8386', description: '' },
   { id: 'location-31', coordinates: [885,622], title: 'Homestead #7589', description: '' },
@@ -41,7 +41,7 @@ const locations: MapLocation[] = [
   { id: 'location-33', coordinates: [901,489], title: 'Homestead #10541', description: '' },
   { id: 'location-34', coordinates: [884,473.5], title: 'Homestead #10737', description: '' },
   { id: 'location-35', coordinates: [863.5,475.5], title: 'Homestead #7736', description: '' },
-  { id: 'location-36', coordinates: [886,503.5], title: 'Homestead #10494', description: '' },
+  { id: 'location-36', coordinates: [886,503.5], title: 'Homestead #10494', description: 'LISTED' },
   { id: 'location-37', coordinates: [470,1171], title: 'Settlement #4609', description: '' },
   { id: 'location-38', coordinates: [460,1156], title: 'Homestead #8796', description: '' },
   { id: 'location-39', coordinates: [449,1173.5], title: 'Homestead #7904', description: '' },
@@ -82,7 +82,7 @@ const locations: MapLocation[] = [
   { id: 'location-74', coordinates: [87.5,814], title: 'Homestead #10327', description: '' },
   { id: 'location-75', coordinates: [71,808.5], title: 'Homestead #8732', description: 'Owner: Evil Arcanist Nick of El Dorado' },
   { id: 'location-76', coordinates: [69.5,790], title: 'Settlement #3439', description: '' },
-  { id: 'location-77', coordinates: [45.5,805], title: 'Settlement #3941', description: '' },
+  { id: 'location-77', coordinates: [45.5,805], title: 'Settlement #3941', description: 'LISTED' },
   { id: 'location-78', coordinates: [50,824], title: 'Homestead #9720', description: '' },
   { id: 'location-79', coordinates: [50,841], title: 'Homestead #8515', description: '' },
   { id: 'location-80', coordinates: [30.5,840], title: 'Settlement #4406', description: 'Owner: Evil Arcanist Nick of El Dorado' },
@@ -103,7 +103,7 @@ const locations: MapLocation[] = [
   { id: 'location-95', coordinates: [349.5,408.5], title: 'Settlement #4073', description: '' },
   { id: 'location-96', coordinates: [362,421.5], title: 'Homestead #7845', description: '' },
   { id: 'location-97', coordinates: [365,440], title: 'Settlement #4433', description: '' },
-  { id: 'location-98', coordinates: [421,108], title: 'Settlement #3751', description: '' },
+  { id: 'location-98', coordinates: [421,108], title: 'Settlement #3751', description: 'Owner: @volter' },
   { id: 'location-99', coordinates: [399.5,86.5], title: 'Settlement #4117', description: '' },
   { id: 'location-100', coordinates: [379,57], title: 'Settlement #3493', description: '' }
 ];
@@ -174,6 +174,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Custom marker icon function
     function createCustomIcon(description: string) {
+        if (description.includes('LISTED')) {
+            return L.icon({
+                iconUrl: 'for-sale.png',
+                iconSize: [21, 21],
+                iconAnchor: [10.5, 10.5],
+                tooltipAnchor: [0, 0]
+            });
+        }
         const isQuestionMark = description === '';
         return L.icon({
             iconUrl: isQuestionMark ? 'qm.png' : 'komodi-head.png',
