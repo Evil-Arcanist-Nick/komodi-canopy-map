@@ -76,7 +76,7 @@ const locations = [
     { id: 'location-74', coordinates: [87.5, 814], title: 'Homestead #10327', description: '' },
     { id: 'location-75', coordinates: [71, 808.5], title: 'Homestead #8732', description: 'Owner: @Иエɔ₭ - Wyrm Defeater of Thieves' },
     { id: 'location-76', coordinates: [69.5, 790], title: 'Settlement #3439', description: '' },
-    { id: 'location-77', coordinates: [45.5, 805], title: 'Settlement #3941', description: '@warrior' },
+    { id: 'location-77', coordinates: [45.5, 805], title: 'Settlement #3941', description: 'Owner: @warrior' },
     { id: 'location-78', coordinates: [50, 824], title: 'Homestead #9720', description: 'Owner: Scorch of Tartarus' },
     { id: 'location-79', coordinates: [50, 841], title: 'Homestead #8515', description: '' },
     { id: 'location-80', coordinates: [30.5, 840], title: 'Settlement #4406', description: 'Owner: @Иエɔ₭ - Wyrm Defeater of Thieves' },
