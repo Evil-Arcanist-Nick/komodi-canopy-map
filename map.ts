@@ -142,6 +142,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // Fit the map to the bounds
     map.fitBounds(bounds);
 
+
+
     // Create markers with tooltips for each location
     locations.forEach(location => {
         const marker = L.marker(L.latLng(location.coordinates[0], location.coordinates[1]), {
