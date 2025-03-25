@@ -86,7 +86,6 @@
             font-weight: bold;
         }
 
-
         .custom-tooltip {
             background-color: rgba(255, 255, 255, 0.9);
             border: 1px solid #ccc;
@@ -129,6 +128,28 @@
             color: #333;
             font-size: 16px;
         }
+
+        .footer {
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .footer-links {
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.9);
+            text-decoration: none;
+            margin: 0 10px;
+            font-weight: bold;
+        }
+
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
@@ -140,10 +161,7 @@
 
         <div class="description">
             Explore the Land Ownership and plot details of komodi canopy in more detail.  Hover over the marker to see information about that plot.
-            
         </div>
-
-
 
         <div class="map-container">
             <div id="map"></div>
@@ -169,9 +187,12 @@
             </div>
         </div>
 
-        <div class="description">
-            
-        </div>
+        <footer class="footer">
+            <div class="footer-links">
+                <a href="terms.html">Terms of Service</a> | 
+                <a href="privacy.html">Privacy Policy</a>
+            </div>
+        </footer>
     </div>
     
     <!-- Leaflet JS -->
